@@ -1,3 +1,15 @@
+const express = require('express')
+const app = express()
+const PORT = process.env.PORT || 3000
+
+app.use(express.static('public'))
+app.use(express.json());
+app.listen(PORT, () => console.log('Example app listening on port '+ PORT))
+
+app.get('/', (req, res) => {
+    console.log("Hello World");
+});
+
 app.get('/square/:mystring', (req, res) => {
     const stringa = req.params.mystring;
     res = JSON.parse('result:' + string_square(stringa));
