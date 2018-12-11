@@ -8,9 +8,9 @@ app.listen(PORT, () => console.log('Example app listening on port '+ PORT))
 app.get('/' , (req, res) => {
     res.json('Hello World');
 });
-app.get('/square?mystring', (req, res) => {
+app.get('/square/:mystring', (req, res) => {
     const stringa = req.params.mystring;
-    res.json('result:' + string_square(stringa));
+    res.status(200).json({result: string_square(stringa)});
 });
 
 function string_square(s) {
@@ -21,4 +21,4 @@ function string_square(s) {
     }
     else
         return -1;
-}
+};
