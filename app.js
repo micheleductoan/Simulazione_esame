@@ -1,1 +1,7 @@
-console.log("Hello World");
+app.get('/', (req, res) => {
+    
+});
+
+function square(s) {
+
+}
